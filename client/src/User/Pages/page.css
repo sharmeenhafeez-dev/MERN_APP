@@ -1,0 +1,14 @@
+/* Add this to your CSS file */
+
+.user-card {
+    height: 300px; /* Set the desired height for the card images */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .user-card img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  

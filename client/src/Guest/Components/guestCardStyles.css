@@ -1,0 +1,38 @@
+/* guestCardStyles.css */
+.guest-card {
+  border: 1px solid black;
+  transition: border-color 0.3s ease-in-out;
+  padding: 10px;
+  text-align: center;
+}
+
+.card-img {
+  object-fit: contain;
+  height: auto;
+  max-height: 250px;
+  width: auto;
+  max-width: 250px;
+}
+
+/* Set the link color and remove text decoration */
+.guest-card a {
+  color: black;
+  text-decoration: none;
+}
+
+.guest-card .card-body {
+  background-color: white;
+}
+
+.guest-card .btn-dark {
+  background-color: black;
+  border: 2px solid black;
+  color: peachpuff;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.guest-card .btn-dark:hover {
+  background-color: peachpuff;
+  border: 2px solid black;
+  color: black;
+}

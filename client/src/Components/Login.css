@@ -1,0 +1,25 @@
+/* login.css */
+
+.login-modal-title {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+  }
+  
+  .login-form {
+    font-family: Arial, sans-serif;
+  }
+  
+  .login-submit-btn {
+    background-color: black;
+    border: 2px solid black;
+    color: peachpuff;
+    transition: color 0.3s ease-in-out; /* Adding smooth transition effect */
+  }
+  
+  .login-submit-btn:hover {
+    color: peachpuff;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+  }
+  

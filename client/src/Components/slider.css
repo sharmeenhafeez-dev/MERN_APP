@@ -1,0 +1,22 @@
+
+
+.carousel {
+    max-height: 400px; 
+    margin-bottom: 200px; 
+  }
+  
+
+.carousel {
+    max-height: 400px; 
+    margin-bottom: 20px; 
+  }
+  
+  .carousel-inner {
+    max-height: 400px; 
+  }
+  
+  .carousel-inner img {
+    max-height: 400px; 
+    object-fit: cover; 
+  }
+  

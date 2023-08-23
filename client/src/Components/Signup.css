@@ -1,0 +1,27 @@
+/* signup.css */
+
+.signup-modal-title {
+    font-family: 'Arial, sans-serif';
+    font-weight: bold;
+  }
+  
+  .signup-modal-body {
+    background-color: peachpuff;
+    padding: 20px;
+    font-family: 'Arial, sans-serif';
+  }
+  
+  .signup-submit-btn {
+    background-color: black;
+    border: 2px solid black;
+    color: peachpuff;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .signup-submit-btn:hover {
+    color: peachpuff;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+  }
+  

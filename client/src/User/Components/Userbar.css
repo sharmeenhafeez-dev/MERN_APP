@@ -1,0 +1,16 @@
+/* userbar.css */
+
+.userbar {
+    background-color: peachpuff;
+  }
+  
+  .userbar-profile {
+    color: black;
+    margin-right: 10px;
+  }
+  
+  .userbar-user {
+    color: black;
+    margin-right: 10px;
+  }
+  
