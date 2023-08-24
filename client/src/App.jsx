@@ -13,7 +13,7 @@ const UserRolee = {
 }
 
 
- export const AppRoute ='http://localhost:1234/'
+ export const AppRoute ='/'
 
 
 
