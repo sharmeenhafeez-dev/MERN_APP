@@ -137,7 +137,7 @@ const Productbyname = async (req, res) => {
         res.status(403).json({ message: "Please Give BrandName" })
     }
     else {
-        await connect(process.env.MONGO_URI)
+        await connect(process.env.MONGODB_URL)
         const products = await Product.find({ brand: brand})
         res.json({ products })
     }

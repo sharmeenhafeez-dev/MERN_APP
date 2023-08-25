@@ -2,21 +2,25 @@ import React, { useContext } from 'react'; // Import useContext
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
-import Login from '../../Components/Login';
 import Navbar from 'react-bootstrap/Navbar';
+import Login from '../../Components/Login'
 import { CgProfile } from 'react-icons/cg';
+import Badge from 'react-bootstrap/Badge';
+import {AiOutlineShoppingCart} from 'react-icons/ai'
 import Cookies from 'js-cookie';
 import { GlobalContext } from '../../Admin/Context/context'; // Import GlobalContext
 
 import './userbar.css'; // Import the CSS file
+import { CartContext } from '../Cart_context/context';
 
 export default function Userbar() {
   const { dispatch } = useContext(GlobalContext); // Use the context
 
+  const {cart_state,cart_dispatch} =useContext(CartContext)
   const handleSignout = () => {
     Cookies.remove('token');
     dispatch({ type: "USER_LOGOUT" });
-    history.push('/guest');
+    history.push('/guest'); 
   };
 
   return (
@@ -40,7 +44,9 @@ export default function Userbar() {
             </span>
           </Navbar.Text>
 
-          <Link to='/cart' className='nav-link text-black px-3'>Cart</Link>
+          <Link to='/cart' className='nav-link text-black px-3'>{<AiOutlineShoppingCart size={30}/>} <Badge bg="black">
+          {cart_state.cart?.length}
+        </Badge></Link>
           <Login />
           <button
             className="btn btn-dark"
