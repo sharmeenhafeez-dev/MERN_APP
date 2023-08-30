@@ -27,6 +27,7 @@ app.use('/api', require('./api/products/router'))
 app.use('/api', require('./api/category/router'))
 app.use('/api', require('./api/brands/router'))
 app.use('/api', require('./api/orders/router'))
+app.use('/api', require('./api/checkout/router'))
 
 app.get('*',(req,res)=>{
 res.sendFile(path.join(__dirname,'./client/dist/index.html'))

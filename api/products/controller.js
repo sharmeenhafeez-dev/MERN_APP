@@ -1,4 +1,201 @@
 
+// const { connect } = require('mongoose');
+// require('dotenv').config()
+// const Product = require('./model')
+
+// const addProduct = async (req, res) => {
+ 
+//     const {title,brand,price ,category,thumbnail,images,rating, description} = req.body;
+//     try {
+//         await connect(process.env.MONGODB_URL)
+
+
+//         const checkDuplicate = await Product.exists({ title: title })
+
+//                 if (checkDuplicate)
+        
+//                     res.status(409).json({
+        
+//                         message: "product already existing"
+        
+//                     })
+//                     else{ await Product.create({title,brand,price ,category,thumbnail,images,rating, description} )
+
+//                     res.status(201).json({
+//                         message: "product successfully  created "
+//                     })}
+
+          
+//     } catch (error) {
+//                 res.status(500).json({
+//                     message: error.message
+        
+//                 })
+//             }
+
+
+// }
+
+// const getAllProducts = async(req, res) => {
+
+//     try {
+//         await connect(process.env.MONGODB_URL)
+//       const product  = await  Product.find()
+//       res.status(200).json(
+//           {
+//             product: product  
+//           }
+//       )
+        
+//     }
+//     catch (error) {
+//         res.status(500).json(
+//             {
+//                 message: error.message
+//             }
+//         )
+  
+//     }
+
+// }
+// const Productbyname = async (req, res) => {
+
+//     const { title } = req.query
+  
+  
+//     try {
+//       await connect(process.env.MONGODB_URL)
+//       const product = await Product.findOne({ title: title })
+//       if (product) {
+//           res.status(200).json({
+//               product: product
+//           });
+//       } else {
+//           res.status(404).json({
+//               message: "Product not found"
+//           });
+//       }
+//   } catch (error) {
+//       res.status(500).json({
+//           message: error.message
+//       });
+//   }
+// }
+//   const Productbyid = async (req, res) => {
+
+//     // const { id } = req.params       is trha b kr skty h 
+//     const { id } = req.params      
+  
+//     try {
+//       await connect(process.env.MONGODB_URL)
+//       const product = await Product.findOne({ _id: id })
+//       if (product) {
+//           res.status(200).json({
+//               product: product
+//           });
+//       } else {
+//           res.status(404).json({
+//               message: "Product not found"
+//           });
+//       }
+//   } catch (error) {
+//       res.status(500).json({
+//           message: error.message
+//       });
+//   }
+// }
+
+//   const ProductbyCategory = async (req, res) => {
+
+//     const { category } = req.params
+  
+//     try {
+//       await connect(process.env.MONGODB_URL)
+//       const product = await Product.findOne({ category: category })
+//       if (product) {
+//           res.status(200).json({
+//               product: product
+//           });
+//       } else {
+//           res.status(404).json({
+//               message: "Product not found"
+//           });
+//       }
+//   } catch (error) {
+//       res.status(500).json({
+//           message: error.message
+//       });
+//   }
+// }
+
+//   const ProductbyBrand = async (req, res) => {
+
+  
+  
+//     const { brand } = req.params
+//     if (!brand) {
+//         res.status(403).json({ message: "Please Give BrandName" })
+//     }
+//     else {
+//         await connect(process.env.MONGODB_URL)
+//         const products = await Product.find({ brand: brand})
+//         res.json({ products })
+//     }
+// }
+
+//   const deleteProduct = async (req,res)=>{
+
+//     const {_id} = req.body
+//     try {
+//       await connect(process.env.MONGODB_URL)
+//       const result = await Product.deleteOne({ _id })
+//       if (result.deletedCount > 0) {
+//           res.status(200).json({
+//               message: "Product deleted successfully",result
+//           });
+//       } else {
+//           res.status(404).json({
+//               message: "Product not found"
+//           });
+//       }
+//   } catch (error) {
+//       res.status(500).json({
+//           message: error.message
+//       });
+//   }
+// }
+
+//   const updateProduct = async (req,res)=>{
+
+//     const {_id, title,brand,price ,category,thumbnail,images,rating} = req.body
+
+//     const filter = {_id}
+//     const update = {title,brand,price ,category,thumbnail,images,rating}
+    
+//     try {
+//       await connect(process.env.MONGODB_URL)
+//       const result = await Product.findOneAndUpdate(filter, update)
+//       if (result) {
+//           res.status(200).json({
+//               message: "Product updated successfully"
+//           });
+//       } else {
+//           res.status(404).json({
+//               message: "Product not found"
+//           });
+//       }
+//   } catch (error) {
+//       res.status(500).json({
+//           message: error.message
+//       });
+//   }
+// }
+
+// module.exports = {addProduct,getAllProducts,Productbyname,Productbyid,ProductbyCategory,ProductbyBrand,deleteProduct,updateProduct}
+// // module.exports = {getAllProducts,addProduct ,Productbyname,Productbyid,ProductbyCategory,ProductbyBrand,deleteProduct,updateProduct}
+
+
+
 const { connect } = require('mongoose');
 require('dotenv').config()
 const Product = require('./model')
@@ -105,53 +302,100 @@ const Productbyname = async (req, res) => {
   }
 }
 
-  const ProductbyCategory = async (req, res) => {
+//   const ProductbyCategory = async (req, res) => {
 
-    const { category } = req.params
+//     const { category } = req.params
   
-    try {
-      await connect(process.env.MONGODB_URL)
-      const product = await Product.findOne({ category: category })
-      if (product) {
-          res.status(200).json({
-              product: product
-          });
-      } else {
-          res.status(404).json({
-              message: "Product not found"
-          });
-      }
-  } catch (error) {
-      res.status(500).json({
-          message: error.message
-      });
-  }
-}
+//     try {
+//       await connect(process.env.MONGODB_URL)
+//       const product = await Product.findOne({ category: category })
+//       if (product) {
+//           res.status(200).json({
+//               product: product
+//           });
+//       } else {
+//           res.status(404).json({
+//               message: "Product not found"
+//           });
+//       }
+//   } catch (error) {
+//       res.status(500).json({
+//           message: error.message
+//       });
+//   }
+// }
 
-  const ProductbyBrand = async (req, res) => {
+//   const ProductbyBrand = async (req, res) => {
 
   
   
-    const { brand } = req.params
+//     const { brand } = req.params
+//     if (!brand) {
+//         res.status(403).json({ message: "Please Give BrandName" })
+//     }
+//     else {
+//         await connect(process.env.MONGODB_URL)
+//         const product = await Product.find({ brand: brand})
+        
+//         res.json({ product})
+//     }
+// }
+// const ProductbyBrand = async (req, res) => {
+//     const { brand } = req.params;
+    
+//     if (!brand) {
+//       res.status(403).json({ message: "Please Give BrandName" });
+//     } else {
+//       await connect(process.env.MONGODB_URL);
+  
+//       const product = await Product.find({ brand: brand});
+//       console.log("Fetched Products:", product); 
+//       res.json({ product });
+//     }
+//   };
+  
+const ProductbyBrand = async (req, res) => {
+    const { brand } = req.params;
+
     if (!brand) {
-        res.status(403).json({ message: "Please Give BrandName" })
+        return res.status(403).json({ message: "Please Give BrandName" });
+    } 
+    
+    try {
+        await connect(process.env.MONGODB_URL);
+        const product = await Product.find({ brand: brand});
+        console.log("Fetched Products:", product); 
+        return res.json({ product });
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
     }
-    else {
-        await connect(process.env.MONGODB_URL)
-        const products = await Product.find({ brand: brand})
-        res.json({ products })
+};
+
+const ProductbyCategory = async (req, res) => {
+    const { category } = req.params
+    
+    try {
+        await connect(process.env.MONGODB_URL);
+        const product = await Product.findOne({ category: category });
+        if (product) {
+            return res.status(200).json({ product: product });
+        } else {
+            return res.status(404).json({ message: "Product not found" });
+        }
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
     }
 }
 
   const deleteProduct = async (req,res)=>{
 
-    const {_id} = req.body
+    const {title} = req.body
     try {
       await connect(process.env.MONGODB_URL)
-      const result = await Product.deleteOne({ _id })
+      const result = await Product.deleteOne({ title: title })
       if (result.deletedCount > 0) {
           res.status(200).json({
-              message: "Product deleted successfully",result
+              message: "Product deleted successfully"
           });
       } else {
           res.status(404).json({
@@ -167,10 +411,10 @@ const Productbyname = async (req, res) => {
 
   const updateProduct = async (req,res)=>{
 
-    const {_id, title,brand,price ,category,thumbnail,images,rating} = req.body
+    const {_id, title,brand,price ,category,thumbnail,images,rating,description} = req.body
 
     const filter = {_id}
-    const update = {title,brand,price ,category,thumbnail,images,rating}
+    const update = {title,brand,price ,category,thumbnail,images,rating,description}
     
     try {
       await connect(process.env.MONGODB_URL)
